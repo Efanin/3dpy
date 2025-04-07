@@ -1,0 +1,25 @@
+import turtle
+turtle.up()
+turtle.speed(30)
+
+def cube(color):
+    for j in range(3):
+        turtle.fillcolor(color[0:5]+str(33*(j+1)))
+        turtle.begin_fill()
+        for i in range(4):
+            if j==0:
+                turtle.forward(70)
+                turtle.left(90)
+            if j>0:
+                turtle.forward(35+35.35*(i%2))
+                turtle.left(45+90*((i+j-1)%2))
+        turtle.end_fill()
+        turtle.goto(turtle.pos()[0]+70*((j+1)%2),turtle.pos()[1]+70*j)
+        if j==0:
+            turtle.left(45)
+    turtle.right(45)
+    turtle.goto(0,0)
+
+
+
+turtle.mainloop()
